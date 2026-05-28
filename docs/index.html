@@ -7,7 +7,7 @@
   <style>
     :root {
       --bg:#0c0e12; --panel:rgba(21,24,30,.72); --line:rgba(0,219,233,.18);
-      --text:#e2e2e8; --muted:#a0b0b1; --cyan:#00dbe9; --indigo:#6b7cff; --danger:#ff6b6b;
+      --text:#e2e2e8; --muted:#a0b0b1; --cyan:#00dbe9; --indigo:#6b7cff; --danger:#ff6b6b; --amber:#d3a44b;
     }
     * { box-sizing:border-box; }
     body {
@@ -28,23 +28,25 @@
       color:var(--cyan); font:700 11px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       letter-spacing:.14em; text-transform:uppercase;
     }
-    h1 { margin:0; max-width:900px; font-size:clamp(38px, 8vw, 86px); line-height:.96; letter-spacing:0; }
+    h1 { margin:0; max-width:940px; font-size:clamp(38px, 8vw, 86px); line-height:.96; letter-spacing:0; }
     h1 span { color:var(--cyan); text-shadow:0 0 28px rgba(0,219,233,.18); }
-    .lead { max-width:820px; margin:0; color:var(--muted); font-size:18px; }
+    h2, h3 { letter-spacing:0; }
+    h2 { margin:0 0 10px; font-size:24px; }
+    h3 { margin:0 0 8px; font-size:16px; }
+    p { margin:0 0 12px; }
+    .lead { max-width:840px; margin:0; color:var(--muted); font-size:18px; }
     .actions { display:flex; flex-wrap:wrap; gap:10px; }
     .button {
       display:inline-flex; align-items:center; justify-content:center; min-height:38px; padding:0 14px; border-radius:6px;
       border:1px solid var(--line); background:rgba(0,219,233,.07); color:var(--text);
       font:700 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.08em; text-transform:uppercase;
     }
+    section { padding:28px 0; }
     .grid { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; margin:18px 0; }
     .panel {
       background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:18px;
       box-shadow:0 8px 32px rgba(0,0,0,.26); backdrop-filter:blur(18px);
     }
-    h2 { margin:0 0 10px; font-size:24px; }
-    h3 { margin:0 0 8px; font-size:16px; }
-    p { margin:0 0 12px; }
     ul { margin:0; padding-left:18px; color:var(--muted); }
     li { margin-bottom:7px; }
     table { width:100%; border-collapse:collapse; margin-top:10px; overflow:hidden; border-radius:8px; }
@@ -52,23 +54,16 @@
     th { color:var(--cyan); font:700 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; text-transform:uppercase; }
     td { color:var(--muted); }
     pre {
-      margin:12px 0;
-      overflow:auto;
-      padding:12px;
-      border:1px solid rgba(132,148,149,.18);
-      border-radius:6px;
-      background:rgba(8,10,13,.58);
-      color:var(--cyan);
+      margin:12px 0; overflow:auto; padding:12px; border:1px solid rgba(132,148,149,.18);
+      border-radius:6px; background:rgba(8,10,13,.58); color:var(--cyan);
       font:12px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     }
-    section { padding:28px 0; }
     .metric-row { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:10px; }
     .metric { min-height:120px; }
     .metric strong { display:block; color:var(--cyan); font:700 34px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
     .metric span { color:var(--muted); font:700 10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.12em; text-transform:uppercase; }
     .scorebar { height:3px; margin-top:18px; background:rgba(132,148,149,.18); }
     .scorebar i { display:block; height:100%; background:linear-gradient(90deg, var(--cyan), var(--indigo)); box-shadow:0 0 12px rgba(0,219,233,.4); }
-    .lang { display:grid; gap:12px; }
     .note { color:#ffd8a8; border-color:rgba(211,164,75,.32); background:rgba(211,164,75,.08); }
     footer { color:var(--muted); border-top:1px solid rgba(132,148,149,.18); padding-top:22px; }
     @media (max-width: 860px) {
@@ -105,11 +100,11 @@
       <article class="panel">
         <div class="kicker">日本語</div>
         <h2>何をするか</h2>
-        <p>統合報告書・サステナビリティレポート・有価証券報告書の非財務情報を、企業価値創造の説明力としてスコア化します。</p>
+        <p>統合報告書、サステナビリティレポート、有価証券報告書、IR資料から、非財務価値創造の説明力を根拠付きで採点します。</p>
         <ul>
-          <li>スコアは企業価値そのものではなく、開示の根拠性・比較可能性・戦略接続を評価します。</li>
-          <li>各点数には定義、参照フレーム、根拠、採点理由、不足根拠、信頼度を持たせます。</li>
-          <li>複数社比較では同じルーブリックと同じ資料境界を固定し、採点のぶれを抑えます。</li>
+          <li>企業価値そのものではなく、開示の根拠性、比較可能性、戦略接続を評価します。</li>
+          <li>各スコアには定義、参照フレームワーク、根拠、採点理由、不足根拠、信頼度を持たせます。</li>
+          <li>複数社比較では、同じルーブリック、同じソース境界、同じ年度方針で採点ぶれを抑えます。</li>
         </ul>
       </article>
       <article class="panel">
@@ -124,12 +119,12 @@
       </article>
       <article class="panel">
         <div class="kicker">中文</div>
-        <h2>它做什么</h2>
-        <p>它把企业非财务披露转换为有证据链的评分面板，用于分析价值创造叙事。</p>
+        <h2>它解决什么</h2>
+        <p>它把企业综合报告、可持续发展报告、年度报告和IR材料中的非财务披露，转换成有证据、有定义、有评分理由的可视化评分面板。</p>
         <ul>
-          <li>评分不是投资评级，而是评估披露质量、战略连接和可验证性。</li>
-          <li>每个分数都包含定义、框架依据、证据、评分理由、缺失证据和置信度。</li>
-          <li>横向比较时锁定同一套规则，减少不同公司之间的评分漂移。</li>
+          <li>它不是投资评级，而是评估披露质量、战略连接和可比性。</li>
+          <li>每个分数都包含定义、框架依据、证据、理由、缺失证据和置信度。</li>
+          <li>横向比较时固定同一评分规则、同一资料边界和同一年度口径，减少主观漂移。</li>
         </ul>
       </article>
     </section>
@@ -146,9 +141,9 @@
             <tr><th>BMO</th><td>10</td><td>Business model: inputs, activities, outputs, outcomes, customers, and value chain.</td></tr>
             <tr><th>SIX</th><td>12</td><td>Non-financial capital: human, intellectual, social, natural, and related capitals.</td></tr>
             <tr><th>STR</th><td>12</td><td>Strategy and resource allocation: investment logic, execution plan, and scenario response.</td></tr>
-            <tr><th>KPI</th><td>12</td><td>KPI outcomes: targets, actuals, time series, and links to value drivers.</td></tr>
+            <tr><th>KPI</th><td>14</td><td>KPI outcomes: targets, actuals, time series, and links to value drivers.</td></tr>
             <tr><th>GOV</th><td>10</td><td>Governance: board oversight, management accountability, incentives, and committees.</td></tr>
-            <tr><th>RSK</th><td>8</td><td>Risk and opportunity: climate, nature, human rights, supply chain, technology, and regulation.</td></tr>
+            <tr><th>RSK</th><td>6</td><td>Risk and opportunity: climate, nature, human rights, supply chain, technology, and regulation.</td></tr>
             <tr><th>QLT</th><td>6</td><td>Disclosure quality: specificity, comparability, evidence, and positive/negative balance.</td></tr>
           </tbody>
         </table>
@@ -160,11 +155,11 @@
         <div class="kicker">Japan Core</div>
         <h3>Japanese listed companies</h3>
         <ul>
-          <li>METI Value Co-Creation Guidance</li>
+          <li>METI Value Co-Creation Guidance 2.0</li>
           <li>IFRS Integrated Reporting Framework</li>
           <li>SSBJ / ISSB</li>
           <li>JPX capital-cost context</li>
-          <li>FSA sustainability disclosure context</li>
+          <li>FSA sustainability and human-capital disclosure context</li>
         </ul>
       </div>
       <div class="panel">
@@ -205,7 +200,7 @@
         <h2>Generate the fictional dashboard</h2>
         <p>Use the bundled Python script with the sample scoring JSON. The output is a single portable HTML file.</p>
         <pre><code>python scripts/build_dashboard.py examples/sample-scoring.json examples/sample-dashboard.html</code></pre>
-        <p>The sample JSON intentionally includes all nine scoring tags, downgrade reasons, score caps, evidence IDs, and clickable source metadata so the GUI demonstrates the full operating model.</p>
+        <p>The sample JSON includes all nine scoring tags, downgrade reasons, score caps, evidence IDs, and clickable source metadata so the GUI demonstrates the full operating model.</p>
       </div>
     </section>
 
