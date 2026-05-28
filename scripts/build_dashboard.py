@@ -1180,7 +1180,8 @@ def main(argv):
         print("Usage: build_dashboard.py scoring.json dashboard.html", file=sys.stderr)
         return 2
     results = load_results(Path(argv[1]))
-    Path(argv[2]).write_text(build_html(results), encoding="utf-8")
+    html_text = "\n".join(line.rstrip() for line in build_html(results).splitlines()) + "\n"
+    Path(argv[2]).write_text(html_text, encoding="utf-8")
     return 0
 
 

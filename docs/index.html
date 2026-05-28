@@ -51,6 +51,16 @@
     th, td { padding:10px; border-bottom:1px solid rgba(132,148,149,.16); text-align:left; vertical-align:top; }
     th { color:var(--cyan); font:700 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; text-transform:uppercase; }
     td { color:var(--muted); }
+    pre {
+      margin:12px 0;
+      overflow:auto;
+      padding:12px;
+      border:1px solid rgba(132,148,149,.18);
+      border-radius:6px;
+      background:rgba(8,10,13,.58);
+      color:var(--cyan);
+      font:12px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
     section { padding:28px 0; }
     .metric-row { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:10px; }
     .metric { min-height:120px; }
@@ -76,7 +86,7 @@
         A Codex skill and dashboard generator for scoring integrated reports, sustainability reports, and annual-report narratives under a locked, evidence-first rubric.
       </p>
       <div class="actions">
-        <a class="button" href="../README.md">Read repository guide</a>
+        <a class="button" href="https://github.com/0xpandadev/Nonfinancial-Value-Scorer#readme">Read repository guide</a>
         <a class="button" href="./fictional-dashboard.html">Open fictional GUI sample</a>
         <a class="button" href="./fictional-scoring.json">View sample scoring JSON</a>
       </div>
@@ -186,6 +196,16 @@
         <p>
           This is not a credit rating, ESG rating, investment recommendation, or intrinsic valuation. It is a repeatable, source-backed way to judge whether the report gives enough evidence to understand non-financial value creation.
         </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="panel">
+        <div class="kicker">How to run</div>
+        <h2>Generate the fictional dashboard</h2>
+        <p>Use the bundled Python script with the sample scoring JSON. The output is a single portable HTML file.</p>
+        <pre><code>python scripts/build_dashboard.py examples/sample-scoring.json examples/sample-dashboard.html</code></pre>
+        <p>The sample JSON intentionally includes all nine scoring tags, downgrade reasons, score caps, evidence IDs, and clickable source metadata so the GUI demonstrates the full operating model.</p>
       </div>
     </section>
 

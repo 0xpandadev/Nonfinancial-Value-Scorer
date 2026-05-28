@@ -3,7 +3,7 @@
     "company": "Example Holdings",
     "industry": "Industrial products",
     "fiscal_year": 2026,
-    "overall_score_0_100": 68,
+    "overall_score_0_100": 68.7,
     "confidence": "medium",
     "scoring_audit": {
       "rubric_version": "nonfinancial-value-scorer-2026-05",
@@ -16,28 +16,31 @@
         "detected_market": "TSE Prime",
         "selected_framework_set": "japan_core",
         "primary_frameworks": ["METI-VCC-2.0", "IFRS-IR", "SSBJ", "JPX", "FSA"],
-        "supporting_frameworks": ["ISSB", "SASB", "GRI", "GHG-PROTOCOL"],
-        "selection_reason": "Japanese listed company with integrated and sustainability reports.",
+        "supporting_frameworks": ["ISSB", "SASB", "GRI", "GHG-PROTOCOL", "TNFD", "OECD", "UNGP"],
+        "selection_reason": "Fictional Japanese listed company with an integrated report and sustainability report; use Japan core plus global comparability checks.",
         "selection_confidence": "high"
       },
       "calibration_status": "checked",
-      "report_boundary_policy": "latest integrated report plus sustainability report",
+      "report_boundary_policy": "fictional integrated report plus fictional sustainability report",
       "reviewer": "second-pass model review",
       "audit_notes": [
-        "Horizontal tag calibration completed.",
-        "Same 0-10 cap rules applied to every tag."
+        "Horizontal tag calibration completed across all nine tags.",
+        "Same 0-10 score scale and cap rules applied to every tag.",
+        "Fictional sample only; report URLs intentionally point to example.com placeholders."
       ]
     },
     "top_strengths": [
-      "Clear value creation narrative tied to customer problems and strategic assets.",
+      "Clear value creation narrative tied to customer problems, process technology, and service revenue.",
       "Human capital and intangible asset initiatives are connected to strategy.",
-      "Several KPIs include time-series progress."
+      "Several KPIs include time-series progress and board-level accountability."
     ],
     "top_gaps": [
-      "Capital allocation link to non-financial drivers is weak.",
-      "Governance accountability for materiality is not decision-grade."
+      "Capital allocation link to non-financial value drivers is still partial.",
+      "Materiality lacks quantified financial impact ranges.",
+      "Climate and supply-chain risk exposure is not scenario quantified."
     ],
     "comparability_warnings": [
+      "Fictional data is designed for UI demonstration, not company assessment.",
       "Report boundary differs from peer sustainability reports."
     ],
     "report_sources": [
@@ -54,7 +57,7 @@
         "source_url": "https://example.com/integrated-report-2026.pdf",
         "retrieved_at": "2026-05-28",
         "source_confidence": "high",
-        "selection_reason": "Official company PDF from report library."
+        "selection_reason": "Fictional official company PDF from report library."
       },
       {
         "report_id": "R2",
@@ -69,7 +72,7 @@
         "source_url": "https://example.com/sustainability-report-2026.pdf",
         "retrieved_at": "2026-05-28",
         "source_confidence": "high",
-        "selection_reason": "Official company PDF from sustainability archive."
+        "selection_reason": "Fictional official company PDF from sustainability archive."
       }
     ],
     "scores": [
@@ -77,43 +80,127 @@
         "tag_id": "VCS",
         "label": "Value creation story",
         "definition": "Whether the company explains how business model, strategy, resources, stakeholder relationships, and outcomes connect as a causal story.",
-        "framework_basis": ["METI Value Co-Creation Guidance 2.0", "IFRS Integrated Reporting Framework"],
-        "raw_score_0_10": 8,
+        "framework_basis": ["METI-VCC-2.0", "IFRS-IR"],
+        "raw_score_0_10": 8.0,
         "weighted_points": 14.4,
-        "reason": "Narrative explains the path from customer needs to strategic assets and outcomes, but downside trade-offs are limited.",
-        "missing_evidence": ["More explicit negative-outcome discussion"],
-        "score_caps_applied": ["No explicit negative/tradeoff evidence: score not raised above 8"],
+        "reason": "Narrative explains the path from customer productivity issues to strategic assets, process technology, employee skills, and recurring service revenue, but downside trade-offs are limited.",
+        "missing_evidence": ["More explicit negative-outcome and trade-off discussion."],
+        "score_caps_applied": ["No explicit negative/tradeoff evidence: score not raised above 8."],
         "calibration_notes": ["Compared against high VCS anchor."],
         "confidence": "medium",
-        "evidence_ids": ["E1"]
+        "evidence_ids": ["E1", "E2"]
       },
       {
         "tag_id": "MAT",
         "label": "Materiality",
         "definition": "Whether important value drivers and sustainability-related issues are identified, prioritized, and linked to enterprise value.",
-        "framework_basis": ["SSBJ Sustainability Disclosure Standard", "ISSB IFRS S1"],
-        "raw_score_0_10": 6,
-        "weighted_points": 7.2,
-        "reason": "Material themes are ranked and linked to strategy, but financial effect ranges are not disclosed.",
-        "missing_evidence": ["Financial effect range", "Prioritization process owner"],
-        "score_caps_applied": ["No financial effect range: cap 7"],
+        "framework_basis": ["SSBJ", "ISSB IFRS S1", "GRI"],
+        "raw_score_0_10": 6.5,
+        "weighted_points": 7.8,
+        "reason": "Material themes are ranked and linked to strategy, but financial effect ranges and refresh ownership are not disclosed.",
+        "missing_evidence": ["Financial effect range by material topic.", "Named owner for materiality refresh."],
+        "score_caps_applied": ["No financial effect range: cap 7."],
         "calibration_notes": ["Matched mid-high MAT anchor."],
         "confidence": "medium",
-        "evidence_ids": ["E2"]
+        "evidence_ids": ["E3"]
       },
       {
         "tag_id": "BMO",
         "label": "Business model and outcomes",
         "definition": "Whether inputs, business activities, outputs, outcomes, and key stakeholders are described in a connected model.",
-        "framework_basis": ["IFRS Integrated Reporting Framework"],
-        "raw_score_0_10": 7,
-        "weighted_points": 7,
-        "reason": "Business model shows inputs and outcomes, with partial stakeholder outcome disclosure.",
-        "missing_evidence": ["Outcome metrics for suppliers"],
-        "score_caps_applied": ["No stakeholder outcome metrics: cap 8"],
-        "calibration_notes": ["Kept below high anchor because outcome data is partial."],
+        "framework_basis": ["IFRS-IR", "METI-VCC-2.0"],
+        "raw_score_0_10": 7.5,
+        "weighted_points": 7.5,
+        "reason": "Business model shows inputs, process technology, service model, customer outcomes, and recurring revenue, with partial supplier and community outcome disclosure.",
+        "missing_evidence": ["Outcome metrics for suppliers and communities."],
+        "score_caps_applied": ["Stakeholder outcome metrics are partial: cap 8."],
+        "calibration_notes": ["Kept below high anchor because outcome data is incomplete."],
         "confidence": "medium",
-        "evidence_ids": ["E1"]
+        "evidence_ids": ["E1", "E2"]
+      },
+      {
+        "tag_id": "SIX",
+        "label": "Non-financial capital",
+        "definition": "Whether human, intellectual, social, natural, and other non-financial capitals are formed, used, and protected.",
+        "framework_basis": ["IFRS-IR", "METI-VCC-2.0", "GRI"],
+        "raw_score_0_10": 7.0,
+        "weighted_points": 8.4,
+        "reason": "Human capital, process patents, customer community, and energy-use reduction are described as strategic assets, but capital impairment and return-on-capital logic are thin.",
+        "missing_evidence": ["Capital impairment risks.", "Investment-to-outcome bridge for intangible assets."],
+        "score_caps_applied": ["No non-financial capital roll-forward: cap 8."],
+        "calibration_notes": ["Evidence supports a good but not advanced SIX score."],
+        "confidence": "medium",
+        "evidence_ids": ["E2", "E4", "E5"]
+      },
+      {
+        "tag_id": "STR",
+        "label": "Strategy and resource allocation",
+        "definition": "Whether resources and investments are allocated to material issues and business-model priorities.",
+        "framework_basis": ["METI-VCC-2.0", "JPX-CAPITAL-COST", "IFRS-IR"],
+        "raw_score_0_10": 6.0,
+        "weighted_points": 7.2,
+        "reason": "Strategy names automation, service expansion, and energy-efficiency investments, but capital allocation thresholds and scenario triggers are not explicit.",
+        "missing_evidence": ["Investment thresholds.", "Scenario triggers for reallocating capital."],
+        "score_caps_applied": ["No resource allocation threshold: cap 7."],
+        "calibration_notes": ["Lowered below KPI because the roadmap lacks decision rules."],
+        "confidence": "medium",
+        "evidence_ids": ["E4"]
+      },
+      {
+        "tag_id": "KPI",
+        "label": "KPI outcomes",
+        "definition": "Whether targets, actual results, time series, and value-driver links are disclosed.",
+        "framework_basis": ["SSBJ", "ISSB", "SASB", "GRI"],
+        "raw_score_0_10": 6.5,
+        "weighted_points": 7.8,
+        "reason": "KPI table includes employee engagement, service revenue, energy intensity, and customer retention, but the hierarchy to enterprise value is incomplete.",
+        "missing_evidence": ["Explicit KPI-to-enterprise-value bridge.", "Longer time series for newer targets."],
+        "score_caps_applied": ["No complete KPI hierarchy: cap 7."],
+        "calibration_notes": ["KPI score kept near MAT due to similar evidence depth."],
+        "confidence": "medium",
+        "evidence_ids": ["E5"]
+      },
+      {
+        "tag_id": "GOV",
+        "label": "Governance and accountability",
+        "definition": "Whether the board and management oversee non-financial value creation, risks, incentives, and accountability.",
+        "framework_basis": ["FSA", "JPX-CAPITAL-COST", "ISSB IFRS S1"],
+        "raw_score_0_10": 7.0,
+        "weighted_points": 7.0,
+        "reason": "Board committee oversight and executive scorecard links are visible, but board deliberation examples and corrective actions remain summarized.",
+        "missing_evidence": ["Board discussion examples.", "Corrective action after missed targets."],
+        "score_caps_applied": ["No board deliberation evidence: cap 8."],
+        "calibration_notes": ["Governance is stronger than STR but below advanced."],
+        "confidence": "medium",
+        "evidence_ids": ["E6"]
+      },
+      {
+        "tag_id": "RSK",
+        "label": "Risks and opportunities",
+        "definition": "Whether climate, nature, human rights, supply chain, technology, and regulation are linked to future value.",
+        "framework_basis": ["ISSB IFRS S2", "GHG-PROTOCOL", "TNFD", "OECD", "UNGP"],
+        "raw_score_0_10": 5.5,
+        "weighted_points": 4.4,
+        "reason": "Climate transition, supply-chain resilience, and human-rights due diligence are identified, but exposure quantification and scenario financial impacts are missing.",
+        "missing_evidence": ["Scenario financial impact.", "Quantified supplier risk exposure.", "Nature dependency assessment."],
+        "score_caps_applied": ["No quantified risk exposure: cap 6."],
+        "calibration_notes": ["Lowest tag because risk disclosure is mostly qualitative."],
+        "confidence": "medium",
+        "evidence_ids": ["E7", "E8"]
+      },
+      {
+        "tag_id": "QLT",
+        "label": "Disclosure quality",
+        "definition": "Whether disclosure is concrete, comparable, evidence-based, and balanced between positive and negative information.",
+        "framework_basis": ["IFRS-IR", "ISSB", "GRI"],
+        "raw_score_0_10": 7.0,
+        "weighted_points": 4.2,
+        "reason": "Disclosure is structured, source-linked, and evidence-backed, but it uses fictional placeholders and still lacks full external assurance coverage.",
+        "missing_evidence": ["External assurance over all non-financial KPIs.", "Clearer negative-progress table."],
+        "score_caps_applied": ["Partial assurance: cap 8."],
+        "calibration_notes": ["Disclosure quality reflects traceability but not full assurance."],
+        "confidence": "medium",
+        "evidence_ids": ["E3", "E5", "E6", "E8"]
       }
     ],
     "evidence": [
@@ -124,16 +211,78 @@
         "page": 12,
         "section": "Value creation process",
         "excerpt": "The company links customer productivity issues to proprietary process technology, employee skills, and recurring service revenue.",
+        "evidence_type": "text",
         "tag_ids": ["VCS", "BMO"]
       },
       {
         "evidence_id": "E2",
+        "report_id": "R1",
+        "source_file": "example-integrated-report.pdf",
+        "page": 16,
+        "section": "Business model",
+        "excerpt": "Inputs include process engineers, patents, supplier know-how, and customer data; outcomes include reduced downtime and higher lifecycle service attachment.",
+        "evidence_type": "figure",
+        "tag_ids": ["VCS", "BMO", "SIX"]
+      },
+      {
+        "evidence_id": "E3",
         "report_id": "R2",
         "source_file": "example-sustainability-report.pdf",
         "page": 28,
         "section": "Materiality",
         "excerpt": "The report identifies climate transition, human capital, and supply-chain resilience as priority issues with medium-term targets.",
-        "tag_ids": ["MAT"]
+        "evidence_type": "text",
+        "tag_ids": ["MAT", "QLT"]
+      },
+      {
+        "evidence_id": "E4",
+        "report_id": "R1",
+        "source_file": "example-integrated-report.pdf",
+        "page": 34,
+        "section": "Strategy and allocation",
+        "excerpt": "Management plans to increase automation R&D and service platform investment while reducing exposure to low-margin equipment lines.",
+        "evidence_type": "text",
+        "tag_ids": ["STR", "SIX"]
+      },
+      {
+        "evidence_id": "E5",
+        "report_id": "R2",
+        "source_file": "example-sustainability-report.pdf",
+        "page": 42,
+        "section": "KPI table",
+        "excerpt": "KPIs include employee engagement, safety incidents, energy intensity, customer retention, and service revenue mix for fiscal years 2024-2026.",
+        "evidence_type": "table",
+        "tag_ids": ["KPI", "SIX", "QLT"]
+      },
+      {
+        "evidence_id": "E6",
+        "report_id": "R1",
+        "source_file": "example-integrated-report.pdf",
+        "page": 55,
+        "section": "Governance",
+        "excerpt": "The board sustainability committee reviews materiality progress quarterly, and 15% of executive variable compensation is linked to non-financial targets.",
+        "evidence_type": "governance",
+        "tag_ids": ["GOV", "QLT"]
+      },
+      {
+        "evidence_id": "E7",
+        "report_id": "R2",
+        "source_file": "example-sustainability-report.pdf",
+        "page": 63,
+        "section": "Climate and supply-chain risks",
+        "excerpt": "The report lists transition risk, supplier concentration, and carbon-price exposure, but does not quantify financial sensitivity.",
+        "evidence_type": "risk",
+        "tag_ids": ["RSK"]
+      },
+      {
+        "evidence_id": "E8",
+        "report_id": "R2",
+        "source_file": "example-sustainability-report.pdf",
+        "page": 71,
+        "section": "Human rights due diligence",
+        "excerpt": "Supplier self-assessments cover forced labor and safety risks; remediation status is summarized by region without supplier-level exposure.",
+        "evidence_type": "risk",
+        "tag_ids": ["RSK", "QLT"]
       }
     ]
   }
