@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nonfinancial Value Scorer</title>
+  <style>
+    :root {
+      --bg:#0c0e12; --panel:rgba(21,24,30,.72); --line:rgba(0,219,233,.18);
+      --text:#e2e2e8; --muted:#a0b0b1; --cyan:#00dbe9; --indigo:#6b7cff; --danger:#ff6b6b;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; color:var(--text); background:
+        linear-gradient(to right, rgba(132,148,149,.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(132,148,149,.04) 1px, transparent 1px),
+        var(--bg);
+      background-size:30px 30px;
+      font:14px/1.65 "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
+    }
+    a { color:var(--cyan); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .shell { max-width:1180px; margin:0 auto; padding:28px 18px 56px; }
+    header {
+      min-height:58vh; display:grid; align-content:center; gap:24px; border-bottom:1px solid rgba(132,148,149,.18);
+    }
+    .eyebrow, .kicker {
+      color:var(--cyan); font:700 11px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      letter-spacing:.14em; text-transform:uppercase;
+    }
+    h1 { margin:0; max-width:900px; font-size:clamp(38px, 8vw, 86px); line-height:.96; letter-spacing:0; }
+    h1 span { color:var(--cyan); text-shadow:0 0 28px rgba(0,219,233,.18); }
+    .lead { max-width:820px; margin:0; color:var(--muted); font-size:18px; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; }
+    .button {
+      display:inline-flex; align-items:center; justify-content:center; min-height:38px; padding:0 14px; border-radius:6px;
+      border:1px solid var(--line); background:rgba(0,219,233,.07); color:var(--text);
+      font:700 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.08em; text-transform:uppercase;
+    }
+    .grid { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; margin:18px 0; }
+    .panel {
+      background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:18px;
+      box-shadow:0 8px 32px rgba(0,0,0,.26); backdrop-filter:blur(18px);
+    }
+    h2 { margin:0 0 10px; font-size:24px; }
+    h3 { margin:0 0 8px; font-size:16px; }
+    p { margin:0 0 12px; }
+    ul { margin:0; padding-left:18px; color:var(--muted); }
+    li { margin-bottom:7px; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; overflow:hidden; border-radius:8px; }
+    th, td { padding:10px; border-bottom:1px solid rgba(132,148,149,.16); text-align:left; vertical-align:top; }
+    th { color:var(--cyan); font:700 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; text-transform:uppercase; }
+    td { color:var(--muted); }
+    section { padding:28px 0; }
+    .metric-row { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:10px; }
+    .metric { min-height:120px; }
+    .metric strong { display:block; color:var(--cyan); font:700 34px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .metric span { color:var(--muted); font:700 10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.12em; text-transform:uppercase; }
+    .scorebar { height:3px; margin-top:18px; background:rgba(132,148,149,.18); }
+    .scorebar i { display:block; height:100%; background:linear-gradient(90deg, var(--cyan), var(--indigo)); box-shadow:0 0 12px rgba(0,219,233,.4); }
+    .lang { display:grid; gap:12px; }
+    .note { color:#ffd8a8; border-color:rgba(211,164,75,.32); background:rgba(211,164,75,.08); }
+    footer { color:var(--muted); border-top:1px solid rgba(132,148,149,.18); padding-top:22px; }
+    @media (max-width: 860px) {
+      header { min-height:auto; padding:44px 0; }
+      .grid, .metric-row { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div class="eyebrow">Evidence-linked corporate disclosure scoring</div>
+      <h1>Nonfinancial <span>Value</span> Scorer</h1>
+      <p class="lead">
+        A Codex skill and dashboard generator for scoring integrated reports, sustainability reports, and annual-report narratives under a locked, evidence-first rubric.
+      </p>
+      <div class="actions">
+        <a class="button" href="../README.md">Read repository guide</a>
+        <a class="button" href="./fictional-dashboard.html">Open fictional GUI sample</a>
+        <a class="button" href="./fictional-scoring.json">View sample scoring JSON</a>
+      </div>
+    </header>
+
+    <section>
+      <div class="metric-row">
+        <div class="panel metric"><span>Scoring Tags</span><strong>9</strong><div class="scorebar"><i style="width:90%"></i></div></div>
+        <div class="panel metric"><span>Total Score</span><strong>100</strong><div class="scorebar"><i style="width:100%"></i></div></div>
+        <div class="panel metric"><span>Framework Sets</span><strong>JP / Global / EU</strong><div class="scorebar"><i style="width:78%"></i></div></div>
+        <div class="panel metric"><span>Traceability</span><strong>Evidence</strong><div class="scorebar"><i style="width:86%"></i></div></div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <div class="kicker">日本語</div>
+        <h2>何をするか</h2>
+        <p>統合報告書・サステナビリティレポート・有価証券報告書の非財務情報を、企業価値創造の説明力としてスコア化します。</p>
+        <ul>
+          <li>スコアは企業価値そのものではなく、開示の根拠性・比較可能性・戦略接続を評価します。</li>
+          <li>各点数には定義、参照フレーム、根拠、採点理由、不足根拠、信頼度を持たせます。</li>
+          <li>複数社比較では同じルーブリックと同じ資料境界を固定し、採点のぶれを抑えます。</li>
+        </ul>
+      </article>
+      <article class="panel">
+        <div class="kicker">English</div>
+        <h2>What It Does</h2>
+        <p>It converts narrative non-financial disclosure into an evidence-linked score and dashboard for value-creation analysis.</p>
+        <ul>
+          <li>The score is not an investment rating; it evaluates disclosure quality and strategic plausibility.</li>
+          <li>Every score exposes definition, framework basis, evidence, reasoning, missing evidence, and confidence.</li>
+          <li>Peer comparisons lock the same rubric, source pack, report-year policy, and calibration rules.</li>
+        </ul>
+      </article>
+      <article class="panel">
+        <div class="kicker">中文</div>
+        <h2>它做什么</h2>
+        <p>它把企业非财务披露转换为有证据链的评分面板，用于分析价值创造叙事。</p>
+        <ul>
+          <li>评分不是投资评级，而是评估披露质量、战略连接和可验证性。</li>
+          <li>每个分数都包含定义、框架依据、证据、评分理由、缺失证据和置信度。</li>
+          <li>横向比较时锁定同一套规则，减少不同公司之间的评分漂移。</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <div class="panel">
+        <div class="kicker">Rubric</div>
+        <h2>Scoring Tags / 採点項目 / 评分项目</h2>
+        <table>
+          <thead><tr><th>Tag</th><th>Weight</th><th>Definition</th></tr></thead>
+          <tbody>
+            <tr><th>VCS</th><td>18</td><td>Value creation story: purpose, context, strengths, business model, strategy, KPIs, governance, and dialogue.</td></tr>
+            <tr><th>MAT</th><td>12</td><td>Materiality: priority issues, selection basis, enterprise-value relevance, and refresh process.</td></tr>
+            <tr><th>BMO</th><td>10</td><td>Business model: inputs, activities, outputs, outcomes, customers, and value chain.</td></tr>
+            <tr><th>SIX</th><td>12</td><td>Non-financial capital: human, intellectual, social, natural, and related capitals.</td></tr>
+            <tr><th>STR</th><td>12</td><td>Strategy and resource allocation: investment logic, execution plan, and scenario response.</td></tr>
+            <tr><th>KPI</th><td>12</td><td>KPI outcomes: targets, actuals, time series, and links to value drivers.</td></tr>
+            <tr><th>GOV</th><td>10</td><td>Governance: board oversight, management accountability, incentives, and committees.</td></tr>
+            <tr><th>RSK</th><td>8</td><td>Risk and opportunity: climate, nature, human rights, supply chain, technology, and regulation.</td></tr>
+            <tr><th>QLT</th><td>6</td><td>Disclosure quality: specificity, comparability, evidence, and positive/negative balance.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <div class="kicker">Japan Core</div>
+        <h3>Japanese listed companies</h3>
+        <ul>
+          <li>METI Value Co-Creation Guidance</li>
+          <li>IFRS Integrated Reporting Framework</li>
+          <li>SSBJ / ISSB</li>
+          <li>JPX capital-cost context</li>
+          <li>FSA sustainability disclosure context</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <div class="kicker">Global Core</div>
+        <h3>Global and US companies</h3>
+        <ul>
+          <li>IFRS Integrated Reporting</li>
+          <li>ISSB / IFRS S1 and S2</li>
+          <li>SASB and GRI</li>
+          <li>GHG Protocol, CDP, SBTi</li>
+          <li>TNFD, OECD, UNGP when relevant</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <div class="kicker">EU Core</div>
+        <h3>CSRD-style reporting</h3>
+        <ul>
+          <li>ESRS and double materiality</li>
+          <li>ISSB / GRI crosswalk</li>
+          <li>Topic-specific climate, nature, and human-rights checks</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="panel note">
+        <div class="kicker">Important</div>
+        <h2>What the score is not</h2>
+        <p>
+          This is not a credit rating, ESG rating, investment recommendation, or intrinsic valuation. It is a repeatable, source-backed way to judge whether the report gives enough evidence to understand non-financial value creation.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Open the fictional GUI sample to see the intended dashboard tone: dark analytical layout, score cards, radar chart, company x tag heatmap, source links, calibration panel, and evidence drawer.</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,8 @@
+interface:
+  display_name: "Nonfinancial Value Scorer"
+  short_description: "Score corporate non-financial value disclosure"
+  brand_color: "#286B4F"
+  default_prompt: "Use $nonfinancial-value-scorer to score this integrated, sustainability, or annual report with evidence-linked definitions, calibration checks, and an HTML comparison dashboard."
+
+policy:
+  allow_implicit_invocation: true
